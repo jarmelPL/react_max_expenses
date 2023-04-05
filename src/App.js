@@ -49,4 +49,8 @@ function App() {
   );
 }
 
+//jesli w NewExpense kliknie sie przycisk submit, wtedy zostanie stworzony obiekt z nowym expense, zmieni sie stan wiec aplikacja sie przeladuje
+//w NewExpense zostanie przekazany obiekt z nowym expense do funkcji addExpenseHandler z App.js
+//addExpenseHandler zmieni stan i stworzy nową tablicę obiektów expenses, według ktorej zostanie stworzona nowa lista wydatków (stara + jeden nowy wydatek) czyli komponenty ExpenseItem wewnątrz komponentu Expense
+
 export default App;
