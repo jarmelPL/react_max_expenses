@@ -29,6 +29,7 @@ const DUMMY_EXPENSES = [
 
 
 function App() {
+
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
 
   const addExpenseHandler = expense => {
@@ -39,7 +40,6 @@ function App() {
   // expense to dane expenseData (czyli to co zostało wpisane do forumlarza zadania + ID tej czynności)
   // prevExpenses to zmienna expenses przy useState, czyli za pierwszym razem jest to tablica DUMMY_EXPENSES, 
   //jesli dodamy jakas czynność to wtedy będzie to tablica DUMMY_EXPENSES + ta czynność, pozniej kolejna i kolejna
-
 
   return (
     <div>

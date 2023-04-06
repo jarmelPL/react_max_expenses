@@ -1,20 +1,26 @@
+import React, {useState} from "react";
 import ExpenseItem from "./ExpenseItem";
 import './Expenses.css'
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 
 function Expense(props) {
-    const filterChangeHandler = year => {
-      console.log('expense.js ' +year)
+    const [filteredYear, setFilteredYear] = useState('2020')
+
+    const filterChangeHandler = selectedYear => {
+      setFilteredYear(selectedYear)
     }
+
+    const filteredExpenses = props.items.filter(item => item.date.toString().includes(filteredYear))
+    //filtruje tablice z wydatkami po roku, nastepnie ponizej robimy funkcje map tylko na tych pofiltrowanych elementach
 
     return (
       <div>
         <Card className="expenses">
           
-            <ExpensesFilter showYear={filterChangeHandler}/>
+            <ExpensesFilter onChangeFilter={filterChangeHandler} selected={filteredYear}/>
 
-            {props.items.map(expenses => 
+            {filteredExpenses.map(expenses => 
             <ExpenseItem
               key={expenses.id}
               title={expenses.title}
