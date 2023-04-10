@@ -41,6 +41,12 @@ function App() {
   // prevExpenses to zmienna expenses przy useState, czyli za pierwszym razem jest to tablica DUMMY_EXPENSES, 
   //jesli dodamy jakas czynność to wtedy będzie to tablica DUMMY_EXPENSES + ta czynność, pozniej kolejna i kolejna
 
+
+  let yearsArray = ['2022','2021','2020','2019']
+  if  yearsArray.map item.date.rok zawiera sie w tablicy yearsarray to nic, jesli nie to dodaje item.date.rok to yearsarray i pozniej posortuj
+  wtedy tablice yearsarray przekaz jako propsa do expensesfilter i wg niej zrob liste opcji w selectie
+
+
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler}/>
