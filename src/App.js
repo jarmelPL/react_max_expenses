@@ -42,15 +42,19 @@ function App() {
   //jesli dodamy jakas czynność to wtedy będzie to tablica DUMMY_EXPENSES + ta czynność, pozniej kolejna i kolejna
 
 
-  let yearsArray = ['2022','2021','2020','2019']
-  if  yearsArray.map item.date.rok zawiera sie w tablicy yearsarray to nic, jesli nie to dodaje item.date.rok to yearsarray i pozniej posortuj
-  wtedy tablice yearsarray przekaz jako propsa do expensesfilter i wg niej zrob liste opcji w selectie
-
+  let yearsArray = ['2023','2022'];
+  expenses.map(item => {
+    if (!yearsArray.includes(item.date.getFullYear().toString())) {
+      yearsArray.push(item.date.getFullYear().toString())
+      yearsArray.sort()
+      yearsArray.reverse()
+    }
+  })
 
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expense items={expenses}/>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expense items={expenses} yearsArray={yearsArray}/>
     </div>
   );
 }
