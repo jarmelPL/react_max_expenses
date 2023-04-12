@@ -18,9 +18,10 @@ function Expense(props) {
       <div>
         <Card className="expenses">
           
+          <ul className="expenses-list">
             <ExpensesFilter onChangeFilter={filterChangeHandler} selected={filteredYear} yearsArray={props.yearsArray}/>
 
-            {filteredExpenses.length === 0 ? (<p>No expenses found</p>) : (
+            {filteredExpenses.length === 0 ? (<h2 className="expenses-list__fallback">No expenses found</h2>) : (
               filteredExpenses.map(expenses => 
                 <ExpenseItem
                   key={expenses.id}
@@ -28,6 +29,7 @@ function Expense(props) {
                   amount={expenses.amount}
                   date={expenses.date}/>)
             )}
+          </ul>
 
         </Card>
       </div>
